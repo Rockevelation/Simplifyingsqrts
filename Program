@@ -45,6 +45,19 @@ public class Testing {
   }
   
 //====================================FACTOR FINDER==========================
+/*
+public static void factoring(int x){
+    int y;
+  
+    for(int i=x; i >1; i = i -1){
+ 	 y = x % i;
+      if ( y == 0){
+       System.out.println(i);
+      }
+   }
+ }
+my factoring program. needs to be updated with variables but is short
+*/
   public static int factorFinder(int userNum){
     int divider = 1;
     int factor = 1;

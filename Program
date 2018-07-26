@@ -1,0 +1,103 @@
+/*
+Plan: 
+have a number (eg 24)
+lFind the first factor (12 - 2)
+Have used methods divider and factor to get 12 and 2
+Repeat step 1 until at the last factor 
+24 →  12, 2 →  6, 2 →  3, 2
+Find a way for program to recognize when there are more than two similar numbers 
+eg) there are two 2's
+
+
+
+*/
+
+
+
+
+import java.util.Scanner;
+
+
+public class Testing {
+  public static final Scanner CONSOLE = new Scanner(System.in);
+  //====================================DIVIDERFINDER==============================
+  public static int dividerFinder(int userNum){
+    int divider = 1;
+    int returnDivider = 1;
+    int factor = 1;
+    
+    //Gets first multiple ( not 1 and userNum )
+    while ( divider <= userNum && divider <= factor && divider != -100 ){
+      factor = userNum / divider;
+      
+      if ( (factor * divider) == userNum && divider > 1 ) { 
+        //System.out.println(factor + "\t" + divider);
+        returnDivider = divider;
+        divider = -100;
+      }
+      
+      divider = divider + 1; 
+    }
+    
+    return returnDivider;
+    
+    
+  }
+  
+//====================================FACTOR FINDER==========================
+  public static int factorFinder(int userNum){
+    int divider = 1;
+    int factor = 1;
+    int returnFactor = 1;
+    
+    //Gets first multiple ( not 1 and userNum )
+    while ( divider <= userNum && divider <= factor && divider != -100 ){
+      factor = userNum / divider;
+      
+      if ( (factor * divider) == userNum && divider > 1 ) { 
+        //System.out.println(factor + "\t" + divider);
+        returnFactor = factor;
+        divider = -100;
+      }
+      
+      divider = divider + 1; 
+    }
+    
+    return returnFactor;
+    
+    
+  }
+    
+  //=======================================MAIN====================================
+  
+  public static void main ( String [] args){
+
+    System.out.println("Prompt: ");
+    int userNum = CONSOLE.nextInt();
+   
+    System.out.println("dividerFinder: " + dividerFinder(userNum));
+    System.out.println("factorFinder: " + factorFinder(userNum) + "\n");
+     
+    
+  }
+}
+
+
+
+
+
+/*
+ * int divider = 1;
+    int factor = 1;
+        
+    //Gets first multiple ( not 1 and userNum )
+    while ( divider <= userNum && divider <= factor && divider != -100 ){
+      factor = userNum / divider;
+      if ( (factor * divider) == userNum && divider > 1 ) { 
+        System.out.println(factor + "\t" + divider);
+        divider = -100;
+      }
+      divider = divider + 1; 
+    }
+    
+ */
